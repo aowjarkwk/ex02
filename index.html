@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+        function tick() {
+            $('#ticker_01 li:first').slideUp(function () { $(this).appendTo($('#ticker_01')).slideDown(); });
+        }
+        setInterval(function () { tick() }, 5000);
+    </script>
+
+
+</head>
+<style>
+    @font-face {
+        font-family: 'Cafe24Oneprettynight';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .wrap {
+        width: 1500px;
+        margin: 0 auto;
+        font-family: 'Cafe24Oneprettynight';
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(000, 000, 040);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        color: #30CED8;
+    }
+
+    .searchbar {
+        display: flex;
+        justify-content: center;
+    }
+
+    #search {
+        border-radius: 5px;
+        width: 400px;
+        height: 20px;
+
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: #30CED8;
+
+    }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+
+    .dropdown-item:active {
+        background-color: #30CED8;
+    }
+
+    .notice {
+        background-color: #30CED8;
+
+    }
+
+
+    .bestgoods {
+        display: flex;
+
+    }
+
+    .besttext {
+        display: flex;
+        justify-content: center;
+        background-color: #FE4F79;
+
+    }
+
+    .bg {
+        width: 375px;
+        height: 300px;
+        margin: 10px;
+        margin-top: 0;
+    }
+
+    .bgbig {
+        width: 700px;
+        height: 650px;
+        margin: 10px;
+        margin-top: 0;
+    }
+
+    .goodsbig {
+        display: flex;
+        flex-flow: 1 100%;
+        flex-wrap: wrap;
+    }
+
+    .goodssmall {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .goodssmall-1 {
+        display: flex;
+    }
+
+    .goodssmall-2 {
+        display: flex;
+    }
+
+    .newtext {
+        display: flex;
+        justify-content: center;
+        background-color: #30CED8;
+    }
+
+    .newgoods {
+        display: flex;
+        margin-top: 5px;
+        margin-top: 0;
+    }
+
+    .ng {
+        width: 366px;
+        margin: 5px;
+        margin-top: 0;
+    }
+    .racoon{
+        display: flex;
+        justify-content: center;
+        background-color: #30CED8;
+    }
+    .footer {
+        display: flex;
+        margin-top: 100px;
+    }
+
+    .company {
+        flex: 1 25%;
+
+    }
+
+    .cscenter {
+        background-color: #30CED8;
+        flex: 1 25%;
+    }
+
+    .account {
+        background-color: #FE4F79;
+        flex: 1 25%;
+    }
+
+    #page {
+        width: 500px;
+
+    }
+
+    .highlight {
+        font-size: 50px;
+
+    }
+
+    .ticker {
+        width: 500px;
+        height: 30px;
+        overflow: hidden;
+
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+
+    }
+
+    #ticker_02 {
+        height: 120px;
+    }
+
+    .ticker li {
+        height: 30px;
+        display: flex;
+        justify-content: flex-start;
+
+
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo"><a href="ex01.html"><img src="KakaoTalk_20210819_180805305.png" alt=""></a></div>
+            <form action="search">
+                <div class="searchbar"><input type="text" placeholder="검색어 입력" id="search"><input type="image"
+                        src="btn_top_search.png"></div>
+            </form>
+            <div class="menu"><a href="login.html"> 로그인 </a> | <a href="join.html"> 회원가입</a> </div>
+        </div>
+        <div class="nav">
+            <div class="dropdown">
+                <button class="btn #30CED8  dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    ALL
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><button class="dropdown-item" type="button">전체보기</button></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn #30CED8  dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    거실
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><button class="dropdown-item" type="button" onclick = "location.href = 'livingroom.html' ">쇼파</button></li>
+                    <li><button class="dropdown-item" type="button">거실테이블 </button></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn #30CED8  dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    주방
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><button class="dropdown-item" type="button">Action</button></li>
+                    <li><button class="dropdown-item" type="button">Another action</button></li>
+                    <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn #30CED8  dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    침실
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><button class="dropdown-item" type="button">Action</button></li>
+                    <li><button class="dropdown-item" type="button">Another action</button></li>
+                    <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn #30CED8 dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    서재
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><button class="dropdown-item" type="button">Action</button></li>
+                    <li><button class="dropdown-item" type="button">Another action</button></li>
+                    <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn #30CED8 dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    인테리어
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><button class="dropdown-item" type="button">Action</button></li>
+                    <li><button class="dropdown-item" type="button">Another action</button></li>
+                    <li><button class="dropdown-item" type="button">Something else here</button></li>
+                </ul>
+            </div>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="397353dd623e3caff0854dd19ef006f5_20657.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item ">
+                    <img src="4cd44600782d5cf3d6ebeaf5fce05f74_39420.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item ">
+                    <img src="다운로드.jpeg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="notice">
+            <div id="page">
+                <ul id="ticker_01" class="ticker">
+                    <li>오픈기념 99% 세일중!!</li>
+                    <li>사장님이 미쳤어요</li>
+                    <li>아무나 사가라</li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="besttext"> BEST 상품</div>
+        <div class="bestgoods">
+            <div class="goodsbig"><img src="goods\1000001414_main_060.jpg" alt="" class="bgbig">인기제품</div>
+            <div class="goodssmall">
+                <div class="goodssmall-1">
+                    <div class="goods"><img src="goods\1000001588_main_086.jpg" alt="" class="bg">제품1</div>
+                    <div class="goods"> <img src="goods\1000001672_main_070.jpg" alt="" class="bg">제품2</div>
+                </div>
+                <div class="goodssmall-2">
+                    <div class="goods"><img src="goods\1000001687_main_047.jpg" alt="" class="bg">제품3</div>
+                    <div class="goods"><img src="goods\register_main_039.jpg" alt="" class="bg">제품4</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="newtext">신상품</div>
+        <div class="newgoods">
+            <div><img src="goods\register_main_039.jpg" class="ng" alt="">제품소개</div>
+            <div><img src="goods\register_main_039.jpg" class="ng" alt="">제품소개</div>
+            <div><img src="goods\register_main_039.jpg" class="ng" alt="">제품소개</div>
+            <div><img src="goods\register_main_039.jpg" class="ng" alt="">제품소개</div>
+
+
+        </div>
+        <div class="newgoods">
+            <div><img src="goods\register_main_039.jpg" class="ng" alt="">제품소개</div>
+            <div><img src="goods\register_main_039.jpg" class="ng" alt="">제품소개</div>
+            <div><img src="goods\register_main_039.jpg" class="ng" alt="">제품소개</div>
+            <div><img src="goods\register_main_039.jpg" class="ng" alt="">제품소개</div>
+        </div>
+        <div class="racoon"><img src="너굴맨배너.jpg" alt=""></div>
+        <div class="footer">
+            <div class="logo"><a href="ex01.html"><img src="KakaoTalk_20210819_180805305.png" alt=""></a></div>
+            <div class="company">내일의집 주식회사<br>서울특별시 노원구 ....</div>
+            <div class="cscenter">고객문의 010-1234-1234</div>
+            <div class="account">입금계좌</div>
+        </div>
+    </div>
+</body>
+
+</html>

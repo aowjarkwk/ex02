@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    @font-face {
+        font-family: 'Cafe24Oneprettynight';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .wrap {
+        width: 1500px;
+        margin: 0 auto;
+        font-family: 'Cafe24Oneprettynight';
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(000, 000, 040);
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    
+   
+    .admin {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    .process_ {
+        display: flex;
+        margin-left: auto;
+        align-items: flex-end;
+    }
+
+    .process_ p {
+        color: grey;
+    }
+
+    .line {
+        background-color: #FE4F79;
+        height: 10px;
+    }
+
+    .mainwrap {
+        margin-top: 50px;
+        display: flex;
+    }
+
+    .aside {
+        flex: 1 10%;
+    }
+
+    .main {
+        flex: 1 70%;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+
+    .searchbar {
+        display: flex;
+        justify-content: center;
+    }
+
+    #search {
+        border-radius: 5px;
+        width: 400px;
+        height: 20px;
+
+    }
+    select{
+        border-radius: 5px;
+        
+        height: 20px;
+
+    }
+
+    .inquiry {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 100%;
+    }
+    .one2one{
+        display: flex;
+        flex: 1 100%;
+        flex-wrap: wrap;
+    }
+    .subject{
+        display: flex;
+        flex: 1 100%;
+        
+    }
+    .select{
+        margin-left: auto;
+    }
+    .notice_table{
+        flex: 1 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    
+
+    .skyblue {
+        width: 110px;
+        height: 30px;
+        border: 0;
+        outline: none;
+        border-radius: 40px;
+        background: #30CED8;
+        color: white;
+     
+        letter-spacing: 2px;
+      
+    }
+    
+    /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  vertical-align:middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #FE4F79;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #FE4F79;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+p {
+	margin:0px;
+	display:inline-block;
+	font-size:15px;
+	font-weight:bold;
+}
+
+    .footer {
+        display: flex;
+        margin-top: 100px;
+    }
+
+    .company {
+        flex: 1 25%;
+
+    }
+
+    .cscenter {
+        background-color: #30CED8;
+        flex: 1 25%;
+    }
+
+    .account {
+        background-color: #FE4F79;
+        flex: 1 25%;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo"><img src="KakaoTalk_20210819_180805305.png" alt=""></div>
+            <div class="header_text">
+                <h1>관리자 화면</h1>
+            </div>
+            <div class="logout">
+                <h2>로그아웃</h2>
+            </div>
+        </div>
+        <div class="admin">
+            <h1>관리자 페이지</h1>
+            <div class="process_">
+                <p class="now">관리자페이지 ></p>
+                <p> <strong>공지사항 관리</strong> </p>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="mainwrap">
+            <div class="aside">
+                <ul>
+                    <li><a href="">회원목록 조회</a></li>
+                    <li><a href="">상품관리</a></li>
+                    <li><a href="">주문관리</a></li>
+                    <li><a href="">리뷰관리</a></li>
+                    <li><a href="">상품문의관리</a></li>
+                    <li><a href="">공지사항관리</a></li>
+                    <li><a href=""><strong>공지사항관리</strong> </a></li>
+                </ul>
+            </div>
+            <div class="main">
+                
+                <div class="one2one">
+                    <div class="subject"> <h1>공지 10건</h1> <div class="select"><select name="" id=""><option value="최신순">최신순</option></select></div></div>
+                    
+                    <div class="notice_table">
+                        <table width="1200px">
+                            <tr>
+                                <th width="100px">번호</th>
+                                <th widht="100px">날짜</th>
+                                <th width="500px">제목</th>
+                                <th>중요</th>
+                                <th>수정</th>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>2021-08-24</td>
+                                <td>공지사항입니다. 15</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                  </label>
+                                  <p>OFF</p><p style="display:none;">ON</p> </td>
+                                <td><button class="skyblue">수정</button></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>2021-08-23</td>
+                                <td>이벤트 안내입니다. 15</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                  </label>
+                                  <p>OFF</p><p style="display:none;">ON</p> </td>
+                                <td><button class="skyblue">수정</button></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>2021-08-22</td>
+                                <td>공지사항입니다. 13</td>
+                                <td><label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                  </label>
+                                  <p>OFF</p><p style="display:none;">ON</p> </td>
+                                <td><button class="skyblue">수정</button></td>
+                                
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="logo"><a href="ex01.html"><img src="KakaoTalk_20210819_180805305.png" alt=""></a></div>
+            <div class="company">내일의집 주식회사<br>서울특별시 노원구 ....</div>
+            <div class="cscenter">고객문의 010-1234-1234</div>
+            <div class="account">입금계좌</div>
+        </div>
+    </div>
+<script>
+    var check = $("input[type='checkbox']");
+check.click(function(){
+	$("p").toggle();
+});
+</script>
+</body>
+
+</html>

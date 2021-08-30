@@ -40,7 +40,7 @@
     .logo {
         color: #30CED8;
     }
-    
+
     .searchbar {
         display: flex;
         justify-content: flex-end;
@@ -52,6 +52,7 @@
         height: 20px;
 
     }
+
     #search2 {
         border-radius: 5px;
         width: 100px;
@@ -63,7 +64,7 @@
         display: flex;
         justify-content: space-around;
         background-color: #30CED8;
-        
+
     }
 
     .dropdown-toggle::after {
@@ -90,18 +91,22 @@
         justify-content: center;
         align-items: center;
     }
-    .category{
+
+    .category {
         display: flex;
     }
-    .select{
+
+    .select {
         display: flex;
         justify-content: end;
     }
-    .page{
+
+    .page {
         margin-top: 100px;
         display: flex;
         justify-content: center;
     }
+
     h3 {
         margin: 20px;
         color: gray;
@@ -112,9 +117,9 @@
         margin-left: auto;
         width: 100px;
         height: 20px;
-        
+
     }
-    
+
     .goods {
         display: flex;
         margin-top: 5px;
@@ -146,8 +151,16 @@
         background-color: #FE4F79;
         flex: 1 25%;
     }
+
     .no_active {
         color: rgb(100, 100, 100);
+    }
+
+    .head {
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
     }
 </style>
 
@@ -169,7 +182,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <li><button class="dropdown-item" type="button">전체보기</button></li>
-                    
+
                 </ul>
             </div>
             <div class="dropdown">
@@ -178,8 +191,10 @@
                     거실
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button" onclick = "location.href = '../product/product_01.html' ">쇼파</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_02.html'">거실 테이블 </button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href = '../product/product_01.html' ">쇼파</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_02.html'">거실 테이블 </button></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -188,9 +203,12 @@
                     주방
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_03.html'">식탁</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_04.html'">식탁 의자</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_05.html'">주방 수납</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_03.html'">식탁</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_04.html'">식탁 의자</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_05.html'">주방 수납</button></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -199,9 +217,12 @@
                     침실
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_06.html'">침대</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_07.html'">침대 수납</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_08.html'">화장대</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_06.html'">침대</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_07.html'">침대 수납</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_08.html'">화장대</button></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -210,8 +231,10 @@
                     서재
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button"onclick="location.href='../product/product_09.html'">책상</button></li>
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_10.html'">책장</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_09.html'">책상</button></li>
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_10.html'">책장</button></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -220,28 +243,29 @@
                     인테리어
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><button class="dropdown-item" type="button" onclick="location.href='../product/product_11.html'">Action</button></li>
-                
+                    <li><button class="dropdown-item" type="button"
+                            onclick="location.href='../product/product_11.html'">Action</button></li>
+
                 </ul>
             </div>
         </div>
-        <h1>주방</h1>
+        <div class="head">주방</div>
         <div class="menu">
-        
-                <h3 class="active">식탁 </h3>
-                <h3  class="no_active" >식탁 의자</h3>
-                <h3 class="no_active">주방 수납</h3>
-            
-        
+
+            <h3 class="active">식탁 </h3>
+            <h3 class="no_active">식탁 의자</h3>
+            <h3 class="no_active">주방 수납</h3>
+
+
         </div>
-        
-            <select name="" id="">
-                <option value="최신순">최신순</option>
-                <option value="인기순">인기순</option>
-                <option value="가격 낮은 순">가격 낮은 순</option>
-                <option value="가격 높은 순">가격 높은 순</option>
-            </select>
-        
+
+        <select name="" id="">
+            <option value="최신순">최신순</option>
+            <option value="인기순">인기순</option>
+            <option value="가격 낮은 순">가격 낮은 순</option>
+            <option value="가격 높은 순">가격 높은 순</option>
+        </select>
+
         <div class="goods">
             <div><img src="../img/1000001687_main_047.jpg" class="item" alt="">제품소개 </div>
             <div><img src="../img/1000001687_main_047.jpg" class="item" alt="">제품소개</div>
@@ -264,7 +288,7 @@
             <a href="#">1</a>&nbsp;&nbsp;&nbsp;
             <a href="#">2</a>&nbsp;&nbsp;&nbsp;
             <a href="#">3</a>
-            
+
         </div>
         <form action="search">
             <div class="searchbar"><input type="text" placeholder="검색어 입력" id="search2"><input type="image"

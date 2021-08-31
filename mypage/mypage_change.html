@@ -33,8 +33,18 @@
 
 
     </script>
+    <script>
+        function passwordCheckFunction()
+    { var password1 = $("#password1").val(); 
+    var password2 = $("#password2").val(); 
+    if(password1 != password2){ $("#checkMessage").html("비밀번호가 일치하지 않습니다.").css( 'color', '#FE4F79' ); } 
+    else { $("#checkMessage").html("비밀번호가 일치합니다.").css( 'color', '#30CED8' ); } } 
+    
+    
+    </script>
 </head>
 <style>
+   
     @font-face {
         font-family: 'Cafe24Oneprettynight';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
@@ -201,7 +211,7 @@
         margin-left: 3px;
     }
 
-   
+
 
     .p {
         display: flex;
@@ -215,26 +225,28 @@
     }
 
     #datepicker {
-        
+
         background-image: url('../img/calendar_icon.png');
-        background-position:right ;
+        background-position: right;
         background-size: 20px;
-        
-        
-        
+
+
+
         height: 30px;
-        
-        background-repeat:no-repeat;
-       
-        
+
+        background-repeat: no-repeat;
+
+
     }
-    
-    input[type=password] { 
-        font-family:'Courier New', Courier, monospace; }
-        ::placeholder { 
-        font-family: 'Cafe24Oneprettynight'; 
-        
-    } 
+
+    input[type=password] {
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    ::placeholder {
+        font-family: 'Cafe24Oneprettynight';
+
+    }
 
     .tr {
         display: flex;
@@ -349,11 +361,16 @@
         background-color: #FE4F79;
         flex: 1 25%;
     }
-    .withdraw{
+
+    .withdraw {
         color: #FE4F79;
     }
-    #email{
+
+    #email {
         height: 30px;
+    }
+    #pw_question{
+        width: 400px;
     }
 </style>
 
@@ -456,14 +473,14 @@
         <div class="line"></div>
         <div class="section">
             <div class="aside">
-                <div class="aside_menu"><a href="">주문목록/배송조회</a> <br></div>
-                <div class="aside_menu"><a href=""> 상품문의 </a> <br></div>
-                <div class="aside_menu"><a href="">상품후기</a> <br></div>
-                <div class="aside_menu"><a href="">장바구니</a> <br></div>
+                <div class="aside_menu"><a href="mypage_order.html">주문목록/배송조회</a> <br></div>
+                <div class="aside_menu"><a href="mypage_inquiry.html"> 상품문의 </a> <br></div>
+                <div class="aside_menu"><a href="mypage_review.html">상품리뷰</a> <br></div>
+                <div class="aside_menu"><a href="../order/cart.html">장바구니</a> <br></div>
                 <div class="aside_menu"><a href="">마일리지</a> <br></div>
-                <div class="aside_menu"><a href=""> 1:1문의</a> <br></div>
-                <div class="aside_menu active"><a href="">회원정보변경</a> <br></div>
-                <div class="aside_menu"><a href=""class="withdraw">회원탈퇴</a> <br></div>
+                <div class="aside_menu"><a href="mypage_one2one.html"> 1:1문의</a> <br></div>
+                <div class="aside_menu active"><a href="mypage_change.html">회원정보변경</a> <br></div>
+                <div class="aside_menu"><a href="" class="withdraw">회원탈퇴</a> <br></div>
             </div>
             <div class="main">
                 <div class="change_table">
@@ -473,11 +490,11 @@
                     </div>
                     <div class="tr">
                         <div class="th">비밀번호</div>
-                        <div class="td"><input type="password" class="pw"> 8~20자 숫자와 대소문자,특수문자를 포함해주세요</div>
+                        <div class="td"><input type="password" class="pw" id="password1" onkeyup="passwordCheckFunction();"> 8~20자 숫자와 대소문자,특수문자를 포함해주세요</div>
                     </div>
                     <div class="tr">
                         <div class="th">비밀번호 확인</div>
-                        <div class="td"><input type="password" class="pw2">불일치합니다</div>
+                        <div class="td"><input type="password" class="pw2" id="password2" onkeyup="passwordCheckFunction();"><span id="checkMessage"></span> </div>
                     </div>
                     <div class="tr">
                         <div class="th ">이름</div>
@@ -494,6 +511,7 @@
                                     <option value="">직접입력</option>
                                     <option value="">gmail.com</option>
                                     <option value="">naver.com</option>
+                                    <option value="">daum.net</option>
                                 </select></div><input type="checkbox" name="" id=""><label for="">정보/이벤트 메일 수신에
                                 동의합니다.(미동의시에도 배송,주문,알림정보는 발송됩니다.)</label>
                         </div>
@@ -509,26 +527,30 @@
                         <div class="th">주소</div>
                         <div class="td">
                             <div><input type="text" class="address1" id="sample6_postcode" readonly>
-                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"></div>
-                        <div><input type="text" class="address2"  id="sample6_address" readonly></div>
-                        <input type="hidden" class="address3" id="sample6_extraAddress" readonly><div>
-                            <input type="text" class="address3"  id="sample6_detailAddress" placeholder="상세주소"></div>
+                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+                            </div>
+                            <div><input type="text" class="address2" id="sample6_address" readonly></div>
+                            <input type="hidden" class="address3" id="sample6_extraAddress" readonly>
+                            <div>
+                                <input type="text" class="address3" id="sample6_detailAddress" placeholder="상세주소">
+                            </div>
                         </div>
                     </div>
                     <div class="tr">
                         <div class="th">비밀번호 찾기 질문</div>
                         <div class="td">
-                            <div><select name="" id="">
-                                   
-                                    <option value="">내 보물 1호는?</option>
-                                    <option value="">첫 애완동물 이름은?</option>
-                                    <option value="">내가 가장 존경하는 인물은?</option>
-                                    <option value="">가장 기억에 남는 선생님 성함은?</option>
-                                    <option value="">내가 졸업한 초등학교 이름은?</option>
-                                    <option value="">내가 졸업한 고등학교 이름은?</option>
-                                    <option value="">내가 처음 사용한 핸드폰 번호는?</option>
-                                    <option value="">아버지 성함은?</option>
-                                    <option value="">어머니 성함은?</option>
+                            <div><select name="" id="pw_question">
+
+                                <option value="01">내 보물 1호는?</option>
+                                <option value="02">내가 가장 좋아하는 영화 제목은?</option>
+                                <option value="03">첫 애완동물 이름은?</option>
+                                <option value="04">내가 가장 존경하는 인물은?</option>
+                                <option value="05">가장 기억에 남는 선생님 성함은?</option>
+                                <option value="06">내가 졸업한 초등학교 이름은?</option>
+                                <option value="07">내가 졸업한 고등학교 이름은?</option>
+                                <option value="08">내가 처음 사용한 핸드폰 번호는?</option>
+                                <option value="09">아버지 성함은?</option>
+                                <option value="10">어머니 성함은?</option>
                                 </select></div><input type="text" name="" id="" class="pw_answer">
                         </div>
 
@@ -537,7 +559,7 @@
                 </div>
 
             </div>
-            <input type="submit" name="" id="" class="skyblue" value="변경">
+            <input type="submit" name="" id="" class="skyblue" value="변경" onclick="chkPW()">
         </div>
 
         <div class="footer">
@@ -551,43 +573,43 @@
     <script>
         function sample6_execDaumPostcode() {
             new daum.Postcode({
-                oncomplete: function(data) {
+                oncomplete: function (data) {
                     // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-    
+
                     // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                     // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                     var addr = ''; // 주소 변수
                     var extraAddr = ''; // 참고항목 변수
-    
+
                     //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
                     if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
                         addr = data.roadAddress;
                     } else { // 사용자가 지번 주소를 선택했을 경우(J)
                         addr = data.jibunAddress;
                     }
-    
+
                     // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                    if(data.userSelectedType === 'R'){
+                    if (data.userSelectedType === 'R') {
                         // 법정동명이 있을 경우 추가한다. (법정리는 제외)
                         // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
                             extraAddr += data.bname;
                         }
                         // 건물명이 있고, 공동주택일 경우 추가한다.
-                        if(data.buildingName !== '' && data.apartment === 'Y'){
+                        if (data.buildingName !== '' && data.apartment === 'Y') {
                             extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                         }
                         // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                        if(extraAddr !== ''){
+                        if (extraAddr !== '') {
                             extraAddr = ' (' + extraAddr + ')';
                         }
                         // 조합된 참고항목을 해당 필드에 넣는다.
                         document.getElementById("sample6_extraAddress").value = extraAddr;
-                    
+
                     } else {
                         document.getElementById("sample6_extraAddress").value = '';
                     }
-    
+
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
                     document.getElementById('sample6_postcode').value = data.zonecode;
                     document.getElementById("sample6_address").value = addr;
@@ -596,6 +618,29 @@
                 }
             }).open();
         }
+        function chkPW(){
+
+var pw = $("#password1").val();
+var num = pw.search(/[0-9]/g);
+var eng = pw.search(/[a-z]/ig);
+var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+if(pw.length < 8 || pw.length > 20){
+
+ alert("비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.");
+ return false;
+}else if(pw.search(/\s/) != -1){
+ alert("비밀번호는 공백 없이 입력해주세요.");
+ return false;
+}else if(num < 0 || eng < 0 || spe < 0 ){
+ alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+ return false;
+}else {
+   console.log("통과"); 
+   return true;
+}
+
+}
     </script>
 </body>
 

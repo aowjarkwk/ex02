@@ -13,7 +13,17 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+<script>
+    function passwordCheckFunction()
+{ var password1 = $("#password1").val(); 
+var password2 = $("#password2").val(); 
+if(password1 != password2){ $("#checkMessage").html("비밀번호가 일치하지 않습니다.").css( 'color', '#FE4F79' ); } 
+else { $("#checkMessage").html("비밀번호가 일치합니다.").css( 'color', '#30CED8' ); } } 
+
+
+</script>
 <style>
+   
     @font-face {
         font-family: 'Cafe24Oneprettynight';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
@@ -341,11 +351,11 @@
                 </div>
                 <div class="tr">
                     <div class="th">비밀번호</div>
-                    <div class="td"><input type="password" class="pw"> 8~20자 숫자와 대소문자,특수문자를 포함해주세요</div>
+                    <div class="td"><input type="password" class="pw" id="password1" onkeyup="passwordCheckFunction();"> 8~20자 숫자와 대소문자,특수문자를 포함해주세요</div>
                 </div>
                 <div class="tr">
                     <div class="th">비밀번호 확인</div>
-                    <div class="td"><input type="password" class="pw2">불일치합니다</div>
+                    <div class="td"><input type="password" class="pw2" id="password2" onkeyup="passwordCheckFunction();"> <span id="checkMessage"></span></div>
                 </div>
                 <div class="tr">
                     <div class="th ">이름</div>
@@ -362,6 +372,7 @@
                                 <option value="">직접입력</option>
                                 <option value="">gmail.com</option>
                                 <option value="">naver.com</option>
+                                <option value="">daum.net</option>
                                 
                             </select></div><input type="checkbox" name="email_recieve" id="email_recieve"><label for="email_recieve">정보/이벤트 메일 수신에
                             동의합니다.(미동의시에도 배송,주문,알림정보는 발송됩니다.)</label>
@@ -389,15 +400,16 @@
                     <div class="td">
                         <div><select name="" id="pw_question">
                             
-                            <option value="">내 보물 1호는?</option>
-                            <option value="">첫 애완동물 이름은?</option>
-                            <option value="">내가 가장 존경하는 인물은?</option>
-                            <option value="">가장 기억에 남는 선생님 성함은?</option>
-                            <option value="">내가 졸업한 초등학교 이름은?</option>
-                            <option value="">내가 졸업한 고등학교 이름은?</option>
-                            <option value="">내가 처음 사용한 핸드폰 번호는?</option>
-                            <option value="">아버지 성함은?</option>
-                            <option value="">어머니 성함은?</option>
+                            <option value="01">내 보물 1호는?</option>
+                            <option value="02">내가 가장 좋아하는 영화 제목은?</option>
+                            <option value="03">첫 애완동물 이름은?</option>
+                            <option value="04">내가 가장 존경하는 인물은?</option>
+                            <option value="05">가장 기억에 남는 선생님 성함은?</option>
+                            <option value="06">내가 졸업한 초등학교 이름은?</option>
+                            <option value="07">내가 졸업한 고등학교 이름은?</option>
+                            <option value="08">내가 처음 사용한 핸드폰 번호는?</option>
+                            <option value="09">아버지 성함은?</option>
+                            <option value="10">어머니 성함은?</option>
                             </select></div><input type="text" name="" id="" class="pw_answer">
                     </div>
 
@@ -407,7 +419,7 @@
 
         </div>
     
-    <div class="button"><input type="submit" name="" id="" class="pink" value="확 인"></div>
+    <div class="button"><input type="submit" name="" id="" class="pink" value="확 인" onclick="chkPW()"></div>
     
     <div class="footer">
         <div class="logo"><a href="ex01.html"><img src="../img/KakaoTalk_20210819_180805305.png" alt=""></a></div>
@@ -416,6 +428,7 @@
         <div class="account">입금계좌</div>
     </div>
     </div>
+    
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     function sample6_execDaumPostcode() {
@@ -465,7 +478,33 @@
             }
         }).open();
     }
+    function chkPW(){
+
+var pw = $("#password1").val();
+var num = pw.search(/[0-9]/g);
+var eng = pw.search(/[a-z]/ig);
+var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+if(pw.length < 8 || pw.length > 20){
+
+ alert("비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.");
+ return false;
+}else if(pw.search(/\s/) != -1){
+ alert("비밀번호는 공백 없이 입력해주세요.");
+ return false;
+}else if(num < 0 || eng < 0 || spe < 0 ){
+ alert("비밀번호는 영문,숫자, 특수문자를 혼합하여 입력해주세요.");
+ return false;
+}else {
+   console.log("통과"); 
+   return true;
+}
+
+}
+
+
 </script>
+
 </body>
 
 </html>
